@@ -1,0 +1,9 @@
+[submodule "token-mint"]
+	path = token-mint
+	url = https://github.com/devwraithe/moneta.git
+[submodule "vault"]
+	path = vault
+	url = https://github.com/devwraithe/aegis.git
+[submodule "escrow"]
+	path = escrow
+	url = https://github.com/devwraithe/themis.git
