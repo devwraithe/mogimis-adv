@@ -2,7 +2,7 @@
 
 ## What is this?
 
-A personal vault that helps you accumulate DRT tokens until you reach your target amount, then converts them all to SOL in one transaction - saving you from paying multiple conversion fees.
+Mogimis is a personal vault that helps you accumulate DRT tokens until you reach your target amount, then converts them all to SOL in one transaction - saving you from paying multiple conversion fees.
 
 ## The Problem
 
@@ -23,6 +23,11 @@ If James converts to SOL after each payment, he pays $5 in transaction fees ever
 Instead, James creates a personal vault and sets a target of 1,000 DRT. Each time he receives DRT, he deposits it into his vault. When he reaches 1,000 DRT, the vault releases the funds. James then moves them to the escrow which converts everything to SOL in one transaction.
 
 **Result:** James pays $5 once instead of $50 multiple times, saving $45.
+
+## Architectural Diagram
+
+![Architectural Diagram](./docs/arch-diag.png)
+_Architectural diagram of interaction between Vault and Escrow_
 
 ## How It Works
 
@@ -51,7 +56,7 @@ SOL arrives in your wallet
 
 ```
     YOU RECEIVE DRT REGULARLY
-    
+
     💰 +50 DRT    💰 +120 DRT    💰 +80 DRT
          │              │              │
          └──────────────┴──────────────┘
@@ -90,10 +95,12 @@ SOL arrives in your wallet
 ## Cost Comparison
 
 **Without Vault (10 conversions)**
+
 - Convert 100 DRT × 10 times
 - Fee: $5 × 10 = **$50 total**
 
 **With Vault (1 conversion)**
+
 - Save 1,000 DRT, convert once
 - Fee: $5 × 1 = **$5 total**
 
@@ -119,18 +126,21 @@ The escrow handles the actual conversion from DRT to SOL:
 ## Example Scenarios
 
 **Freelancer**
+
 - Receives 50-200 DRT per project
 - Target: 1,000 DRT
 - Time: 2 months
 - Savings: $35 in fees
 
 **Staking Rewards**
+
 - Earns 20 DRT daily
 - Target: 600 DRT
 - Time: 30 days
 - Savings: $145 per month
 
 **Trading**
+
 - 5-10 trades per week
 - Target: 2,000 DRT
 - Time: 3 weeks
@@ -139,11 +149,13 @@ The escrow handles the actual conversion from DRT to SOL:
 ## Technical Components
 
 **Vault**
+
 - Stores your DRT tokens
 - Tracks target and current balance
 - Releases funds when target is reached
 
 **Escrow**
+
 - Receives DRT for conversion
 - Executes DRT → SOL swap
 - Sends SOL to your wallet
@@ -173,4 +185,4 @@ No, the target is set when you create your vault.
 
 ---
 
-*Built with security from Aegis, accounting from Moneta, and governance from Themis.*
+_Built with security from Aegis, accounting from Moneta, and governance from Themis._
